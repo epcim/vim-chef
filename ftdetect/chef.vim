@@ -19,6 +19,3 @@ autocmd BufNewFile,BufRead * if expand('%:p') =~'**/.*chef.*/**/.*cookbooks/.*/t
 autocmd BufNewFile,BufRead * if expand('%:p') =~'**/.*chef.*/**/.*cookbooks/.*/metadata.rb'| set filetype=ruby.chef | endif
 autocmd BufNewFile,BufRead if expand('%:p') =~'**/.*chef.*/**/environments/*.rb'| set filetype=ruby.chef | endif
 autocmd BufNewFile,BufRead if expand('%:p') =~'**/.*chef.*/**/roles/*.rb'| set filetype=ruby.chef | endif
-
-" also managed by vim-ruby
-au BufNewFile,BufRead Berksfile			set filetype=ruby.chef
