@@ -14,9 +14,11 @@
 " limitations under the License.
 "set filetype to ruby.chef only if rb/erb file is in site-cookbooks/cookbooks folder
 "this will work also if you try to edit file from any place even from cookbook folder
-autocmd BufNewFile,BufRead * if expand('%:p') =~'**/.*chef.*/.*cookbooks/.*/\(attributes\|definitions\|libraries\|providers\|recipes\|resources\)/.*.rb'| set filetype=ruby.chef | endif
-autocmd BufNewFile,BufRead * if expand('%:p') =~'**/.*chef.*/.*cookbooks/.*/templates/*/*.erb'| set filetype=eruby.chef | endif
-autocmd BufNewFile,BufRead * if expand('%:p') =~'**/.*chef.*/.*cookbooks/.*/metadata.rb'| set filetype=ruby.chef | endif
-autocmd BufNewFile,BufRead if expand('%:p') =~'**/.*chef.*/environments/*.rb'| set filetype=ruby.chef | endif
-autocmd BufNewFile,BufRead if expand('%:p') =~'**/.*chef.*/roles/*.rb'| set filetype=ruby.chef | endif
-autocmd BufNewFile,BufRead if expand('%:p') =~'**/Berksfile'| set filetype=ruby.chef | endif
+autocmd BufNewFile,BufRead * if expand('%:p') =~'**/.*chef.*/**/.*cookbooks/.*/\(attributes\|definitions\|libraries\|providers\|recipes\|resources\)/.*.rb'| set filetype=ruby.chef | endif
+autocmd BufNewFile,BufRead * if expand('%:p') =~'**/.*chef.*/**/.*cookbooks/.*/templates/*/*.erb'| set filetype=eruby.chef | endif
+autocmd BufNewFile,BufRead * if expand('%:p') =~'**/.*chef.*/**/.*cookbooks/.*/metadata.rb'| set filetype=ruby.chef | endif
+autocmd BufNewFile,BufRead if expand('%:p') =~'**/.*chef.*/**/environments/*.rb'| set filetype=ruby.chef | endif
+autocmd BufNewFile,BufRead if expand('%:p') =~'**/.*chef.*/**/roles/*.rb'| set filetype=ruby.chef | endif
+
+" also managed by vim-ruby
+au BufNewFile,BufRead Berksfile			set filetype=ruby.chef
